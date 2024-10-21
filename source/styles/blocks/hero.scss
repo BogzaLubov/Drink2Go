@@ -314,6 +314,8 @@
 }
 
 .hero__make-order {
+  z-index: 2;
+
   @media (min-width: variables.$tablet-width) {
     @include mixins.set-font(16px, 24px, 400);
   }

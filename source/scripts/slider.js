@@ -8,6 +8,7 @@ const PRICE_CONFIG = {
 const slider = document.querySelector('.form__slider');
 const minInput = document.querySelector('.form__slider-min');
 const maxInput = document.querySelector('.form__slider-max');
+const form = document.querySelector('.catalog__form');
 
 const createSlider = () => {
   noUiSlider.create(slider, {
@@ -82,6 +83,11 @@ const initListeners = () => {
   slider.noUiSlider.on('update', updateInputs);
   minInput.addEventListener('change', (event) => updateSliderFromInput(0, event.target.value));
   maxInput.addEventListener('change', (event) => updateSliderFromInput(1, event.target.value));
+  form.addEventListener('reset', () => {
+    setTimeout(() => {
+      slider.noUiSlider.set(PRICE_CONFIG.START);
+    }, 0);
+  });
 };
 
 const initSlider = () => {
