@@ -7,10 +7,6 @@
   margin: 0 auto;
   padding: 0 20px;
 
-  @media (min-width: variables.$tablet-width) {
-    //padding: 0 30px;
-  }
-
   @media (min-width: variables.$desktop-width) {
     max-width: 1440px;
     padding: 0 40px;

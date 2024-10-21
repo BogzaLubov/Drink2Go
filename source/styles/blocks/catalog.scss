@@ -141,6 +141,7 @@
   border-radius: 4px;
   padding: 4px 30px 4px 10;
   min-width: 165px;
+  max-width: 170px;
   min-height: 32px;
 
   &:hover {
@@ -166,7 +167,7 @@
   }
 
   @media (max-width: variables.$mobile-width-only) {
-    grid-template-rows: repeat(6, 420px);
+    grid-template-rows: repeat(6, minmax(420px, auto));
     gap: 20px;
   }
 }

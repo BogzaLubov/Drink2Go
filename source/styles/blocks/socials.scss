@@ -11,9 +11,18 @@
   padding: 0 0 20px;
   justify-content: flex-end;
 
+  @media (min-width: variables.$tablet-width) {
+    max-width: 360px;
+  }
+
   @media (min-width: variables.$desktop-width) {
     justify-content: flex-start;
     padding: 0 0 17px;
+    max-width: 318px;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    max-width: 160px;
   }
 }
 

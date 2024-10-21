@@ -117,6 +117,14 @@
 
 .advantages__item--speed::before {
   background: url("../../icons/stack.svg#time-icon") no-repeat center / cover;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-top: 3px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-top: 0;
+  }
 }
 
 .advantages__item--convenience::before {
@@ -129,6 +137,14 @@
 
 .advantages__item--ecology::before {
   background: url("../../icons/stack.svg#leaf-icon") no-repeat center / cover;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-top: 3px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-top: 0;
+  }
 }
 
 .advantages__item-title {

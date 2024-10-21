@@ -10,8 +10,6 @@
   display: flex;
   gap: 6px;
   text-transform: none;
-  //padding-top: 3px;
-  //padding-left: 19px;
   letter-spacing: 0;
 }
 
@@ -25,10 +23,6 @@
 
 .contacts__link--address::before {
   content: "";
-  //position: absolute;
-  //left: 0;
-  //top: 4px;
-  //display: block;
   width: 19px;
   height: 21px;
   background: url("../../icons/stack.svg#address-icon") no-repeat center;
@@ -45,17 +39,8 @@
   }
 }
 
-.contacts__link--telephone {
-  // @media (min-width: variables.$tablet-width) {
-  //   padding-top: 3px;
-  // }
-}
-
 .contacts__link--telephone::before {
   content: "";
-  //position: absolute;
-  //left: 0;
-  //top: 4px;
   margin-top: 2px;
   width: 13px;
   height: 16px;

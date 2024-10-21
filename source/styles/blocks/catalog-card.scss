@@ -11,6 +11,10 @@
   @media (min-width: variables.$tablet-width) {
     padding: 49px 30px 30px;
   }
+
+  @media (max-width: variables.$mobile-width-only) {
+    padding: 43px 20px 17px;
+  }
 }
 
 .catalog-card__image-link {
