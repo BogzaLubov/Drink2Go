@@ -1,1 +1,27 @@
-/* здесь используйте глобальные переменные */
+//FONTS
+$font-family: "Montserrat", "Arial", sans-serif;
+
+// View Port Size
+$tablet-width: 768px;
+$desktop-width: 1440px;
+$mobile-width-only: $tablet-width - 1;
+
+//Base Colors
+$base-color-white: #ffffff;
+$base-color-black: #333333;
+$base-color-primary: #7859cf;
+$base-color-secondary: #f0ebff;
+$base-color-accent: #bdbdbd;
+
+//Alternate Colors
+$alt-color-primary-lighter: #9070ec;
+$alt-color-primary-darker: #593cac;
+$alt-color-primary-opacity: rgba(120, 89, 207, 0.25);
+$alt-color-accent: #e2e2e2;
+
+//Background Colors
+$bg-color-1: #f8f8f8;
+$bg-color-2: #f3ebe1;
+$bg-color-3: #eae6fc;
+$bg-color-4: #e5e6e8;
+$bg-color-transparent: transparent;

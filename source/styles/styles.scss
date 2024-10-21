@@ -1,7 +1,34 @@
+/* VENDOR */
+@import "../vendor/nouislider/nouislider.css";
+
 /* GLOBAL */
 @import "./common/variables.scss";
-@import "./common/global.scss";
+@import "./common/mixins.scss";
 @import "./common/fonts.scss";
+@import "./common/global.scss";
+@import "./common/visually-hidden.scss";
+@import "./common/container.scss";
 
 /* BLOCKS */
+@import "./blocks/page.scss";
+@import "./blocks/button.scss";
+@import "./blocks/link-style.scss";
 @import "./blocks/header.scss";
+@import "./blocks/main-navigation.scss";
+@import "./blocks/main.scss";
+@import "./blocks/site-list.scss";
+@import "./blocks/actions.scss";
+@import "./blocks/price.scss";
+@import "./blocks/section-title.scss";
+@import "./blocks/hero.scss";
+@import "./blocks/advantages.scss";
+@import "./blocks/catalog.scss";
+@import "./blocks/catalog-card.scss";
+@import "./blocks/form.scss";
+@import "./blocks/no-ui-slider.scss";
+@import "./blocks/pagination.scss";
+@import "./blocks/address.scss";
+@import "./blocks/footer.scss";
+@import "./blocks/socials.scss";
+@import "./blocks/navigation-theme.scss";
+@import "./blocks/contacts.scss";

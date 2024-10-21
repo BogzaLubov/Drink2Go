@@ -1,0 +1,19 @@
+@use "./variables.scss";
+
+@mixin font-face($font-family, $font-weight, $font-style, $font-src, $font-src-reserve) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: swap;
+    src: $font-src, $font-src-reserve;
+  }
+}
+
+@mixin set-font($font-size, $line-height, $font-weight) {
+  font-family: variables.$font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-style: normal;
+  font-weight: $font-weight;
+}

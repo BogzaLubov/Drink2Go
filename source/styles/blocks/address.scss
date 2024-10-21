@@ -1,0 +1,22 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+
+.address {
+  margin: 0 auto;
+}
+
+.address__map {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  height: 420px;
+
+  @media (min-width: variables.$tablet-width) {
+    height: 480px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    height: 540px;
+  }
+}

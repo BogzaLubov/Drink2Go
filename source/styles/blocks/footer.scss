@@ -1,0 +1,141 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.footer {
+  @media (min-width: variables.$tablet-width) {
+    padding-top: 40px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding-top: 38px;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    padding-top: 20px;
+  }
+}
+
+.footer__container {
+  display: grid;
+  grid-template-areas:
+    "logo       social"
+    "navigation navigation"
+    "developer  developer";
+
+  @media (min-width: variables.$desktop-width) {
+    grid-template:
+      "logo navigation" 46px
+      "description navigation" min-content
+      "social navigation" 82px
+      "developer developer" min-content / max-content 1fr;
+    column-gap: 62px;
+  }
+}
+
+.footer__logo {
+  grid-area: logo;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.footer__logo-image {
+  padding-top: 2px;
+}
+
+.footer__logo-description {
+  display: none;
+  margin: 0;
+  grid-area: description;
+
+  @media (min-width: variables.$desktop-width) {
+    display: block;
+    padding-top: 2px;
+  }
+}
+
+.footer__socials {
+  grid-area: social;
+}
+
+.footer__navigation-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  grid-area: navigation;
+
+  @media (min-width: variables.$tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+.footer__navigation-list::before,
+.footer__navigation-item::after {
+  @media (max-width: variables.$mobile-width-only) {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 100vw;
+    height: 1px;
+    background-color: variables.$base-color-secondary;
+    transform: translateX(-50%);
+  }
+}
+
+.footer__developer {
+  grid-area: developer;
+  padding: 0;
+  padding-top: 8px;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: variables.$tablet-width) {
+    padding-top: 3px;
+  }
+}
+
+.footer__developer-label {
+  @include mixins.set-font(12px, 16px, 400);
+  color: variables.$base-color-accent;
+}
+
+.footer__developer-link {
+  @include mixins.set-font(12px, 16px, 400);
+  position: relative;
+  text-decoration: none;
+  color: variables.$base-color-accent;
+  padding-right: 18px;
+
+  &:hover {
+    color: variables.$base-color-primary;
+  }
+
+  &:active {
+    color: variables.$alt-color-primary-darker;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 13px;
+    height: 16px;
+    mask: url("../../icons/stack.svg#developer-icon") no-repeat center;
+    background-color: variables.$base-color-accent;
+  }
+
+  &:hover::after {
+    background-color: variables.$base-color-primary;
+  }
+
+  &:active::after {
+    background-color: variables.$alt-color-primary-darker;
+  }
+}

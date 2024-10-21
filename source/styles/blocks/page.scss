@@ -1,0 +1,11 @@
+@use "../common/mixins.scss";
+@use "../common/variables.scss";
+
+.page__body {
+  @include mixins.set-font(14px, 20px, 400);
+  display: flex;
+  flex-direction: column;
+  background-color: variables.$base-color-white;
+  color: variables.$base-color-black;
+  height: 100%;
+}

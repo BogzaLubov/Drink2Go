@@ -1,0 +1,166 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.advantages {
+  @media (min-width: variables.$tablet-width) {
+    padding: 60px 0 99px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding: 100px 0 119px;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    padding: 40px 0 60px;
+  }
+}
+
+.advantages__title {
+  margin-bottom: 5px;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+}
+
+.advantages__description {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  @media (min-width: variables.$tablet-width) {
+    @include mixins.set-font(42px, 64px, 700);
+    margin-bottom: 61px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    @include mixins.set-font(24px, 36px, 700);
+    margin-bottom: 35px;
+  }
+}
+
+.advantages__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: variables.$tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 20px;
+    padding-left: 10px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px 30px;
+    padding-left: 0;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.advantages__item {
+  display: grid;
+  text-align: center;
+
+  @media (min-width: variables.$tablet-width) {
+    grid-template-areas:
+      "icon title"
+      "icon description";
+    column-gap: 20px;
+
+    &::before {
+      content: "";
+      width: 52px;
+      height: 55px;
+      grid-area: icon;
+    }
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    align-items: center;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+      content: "";
+      grid-area: none;
+      width: 50px;
+      height: 56px;
+      margin-bottom: 21px;
+    }
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    align-items: center;
+
+    &::before {
+      content: "";
+      width: 50px;
+      height: 56px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.advantages__item--speed::before {
+  background: url("../../icons/stack.svg#time-icon") no-repeat center / cover;
+}
+
+.advantages__item--convenience::before {
+  background: url("../../icons/stack.svg#shield-icon") no-repeat center / cover;
+}
+
+.advantages__item--energy::before {
+  background: url("../../icons/stack.svg#sparc-icon") no-repeat center / cover;
+}
+
+.advantages__item--ecology::before {
+  background: url("../../icons/stack.svg#leaf-icon") no-repeat center / cover;
+}
+
+.advantages__item-title {
+  margin: 0;
+
+  @media (min-width: variables.$tablet-width) {
+    @include mixins.set-font(24px, 36px, 700);
+    margin-bottom: 10px;
+    grid-area: title;
+    text-align: left;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    @include mixins.set-font(18px, 32px, 700);
+    margin-bottom: 4px;
+  }
+}
+
+.advantages__item-description {
+  margin: 0;
+
+  @media (min-width: variables.$tablet-width) {
+    @include mixins.set-font(16px, 24px, 400);
+    grid-area: description;
+    text-align: left;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    text-align: center;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    text-align: center;
+  }
+}

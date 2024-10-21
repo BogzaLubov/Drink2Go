@@ -1,0 +1,66 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.contacts {
+  margin-bottom: 21px;
+}
+
+.contacts__link {
+  @include mixins.set-font(14px, 20px, 400);
+  display: flex;
+  gap: 6px;
+  text-transform: none;
+  //padding-top: 3px;
+  //padding-left: 19px;
+  letter-spacing: 0;
+}
+
+.contacts__link--address {
+  padding-top: 3px;
+
+  @media (min-width: variables.$desktop-width) {
+    padding-top: 4px;
+  }
+}
+
+.contacts__link--address::before {
+  content: "";
+  //position: absolute;
+  //left: 0;
+  //top: 4px;
+  //display: block;
+  width: 19px;
+  height: 21px;
+  background: url("../../icons/stack.svg#address-icon") no-repeat center;
+  mask-position: 50%;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+
+  @media (min-width: variables.$tablet-width) {
+    width: 24px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    width: 17px;
+  }
+}
+
+.contacts__link--telephone {
+  // @media (min-width: variables.$tablet-width) {
+  //   padding-top: 3px;
+  // }
+}
+
+.contacts__link--telephone::before {
+  content: "";
+  //position: absolute;
+  //left: 0;
+  //top: 4px;
+  margin-top: 2px;
+  width: 13px;
+  height: 16px;
+  background: url("../../icons/stack.svg#phone-icon") no-repeat center;
+  mask-position: 50%;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}

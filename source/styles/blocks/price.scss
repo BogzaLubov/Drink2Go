@@ -1,0 +1,28 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.price {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+
+  @media (min-width: variables.$desktop-width) {
+    justify-content: left;
+  }
+}
+
+.price__before {
+  @include mixins.set-font(16px, 32px, 400);
+  text-decoration-line: line-through;
+  color: variables.$base-color-primary;
+  margin: 0;
+  margin-right: 6px;
+}
+
+.price__after {
+  @include mixins.set-font(20px, 32px, 600);
+  margin: 0;
+  margin-right: 21px;
+}

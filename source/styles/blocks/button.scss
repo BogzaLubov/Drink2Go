@@ -1,0 +1,51 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 4px;
+  padding: 8px 20px;
+  border: 0;
+}
+
+.button--primary {
+  background-color: variables.$base-color-primary;
+  color: variables.$base-color-white;
+
+  &:hover,
+  &:focus {
+    background-color: variables.$alt-color-primary-lighter;
+  }
+
+  &:active {
+    background-color: variables.$alt-color-primary-darker;
+  }
+
+  &:disabled {
+    background-color: variables.$base-color-accent;
+  }
+}
+
+.button--secondary {
+  background-color: variables.$base-color-white;
+  color: variables.$base-color-primary;
+
+  &:hover,
+  &:focus {
+    background-color: variables.$alt-color-primary-lighter;
+    color: variables.$base-color-white;
+  }
+
+  &:active {
+    background-color: variables.$alt-color-primary-darker;
+    color: variables.$base-color-white;
+  }
+
+  &:disabled {
+    background-color: variables.$alt-color-accent;
+    color: variables.$base-color-white;
+  }
+}

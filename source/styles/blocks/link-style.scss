@@ -1,0 +1,16 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.link-style {
+  background-color: variables.$bg-color-transparent;
+  color: variables.$base-color-black;
+
+  &:hover,
+  &:focus {
+    color: variables.$base-color-primary;
+  }
+
+  &:active {
+    background-color: variables.$base-color-secondary;
+  }
+}

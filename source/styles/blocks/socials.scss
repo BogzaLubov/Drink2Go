@@ -1,0 +1,64 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.socials {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 0 20px;
+  justify-content: flex-end;
+
+  @media (min-width: variables.$desktop-width) {
+    justify-content: flex-start;
+    padding: 0 0 17px;
+  }
+}
+
+.socials__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 4px;
+
+  &::after {
+    content: "";
+    background-color: variables.$base-color-accent;
+    width: 20px;
+    height: 20px;
+    display: block;
+    mask-position: 50%;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+  }
+
+  &:hover {
+    background-color: variables.$base-color-secondary;
+  }
+
+  &:hover::after {
+    background-color: variables.$base-color-primary;
+  }
+
+  &:active {
+    background-color: variables.$alt-color-primary-opacity;
+  }
+}
+
+.socials__link--vk::after {
+  mask-image: url("../../icons/stack.svg#vk-icon");
+}
+
+.socials__link--pinterest::after {
+  mask-image: url("../../icons/stack.svg#printerest-icon");
+  width: 22px;
+  height: 22px;
+}
+
+.socials__link--ok::after {
+  mask-image: url("../../icons/stack.svg#ok-icon");
+}

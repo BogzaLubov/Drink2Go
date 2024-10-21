@@ -1,0 +1,112 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+
+  @media (min-width: variables.$desktop-width) {
+    gap: 15px;
+    padding-left: 30px;
+  }
+}
+
+.actions__link {
+  color: variables.$base-color-black;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover::before,
+  &:focus::before {
+    background-color: variables.$base-color-primary;
+  }
+
+  // &::before {
+  //   background-color: variables.$base-color-black;
+  //   width: 16px;
+  //   height: 16px;
+  //   margin: 0 auto;
+  //   display: block;
+  //   mask-position: 50%;
+  //   mask-size: contain;
+  //   mask-repeat: no-repeat;
+  // }
+
+  @media (max-width: variables.$mobile-width-only) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    width: 60px;
+    height: 80px;
+    padding: 32px 22px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    width: auto;
+    height: auto;
+    display: flex;
+    gap: 8px;
+  }
+}
+
+// .actions__link::before {
+//   background-color: variables.$base-color-black;
+//   width: 16px;
+//   height: 16px;
+//   margin: 0 auto;
+//   display: block;
+//   mask-position: 50%;
+//   mask-size: contain;
+//   mask-repeat: no-repeat;
+// }
+
+// .actions__link--user-icon::before {
+//   mask-image: url("../../icons/stack.svg#user-icon");
+// }
+
+// .actions__link--cart-icon::before {
+//   mask-image: url("../../icons/stack.svg#cart-icon");
+// }
+
+.actions__item-title {
+  display: none;
+
+  @media (min-width: variables.$desktop-width) {
+    @include mixins.set-font(12px, 16px, 500);
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
+
+.actions__link--user-icon::before {
+  content: "";
+  background-color: variables.$base-color-black;
+  width: 16px;
+  height: 16px;
+  margin: 0 auto;
+  display: block;
+  mask-image: url("../../icons/stack.svg#user-icon");
+  mask-position: 50%;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+.actions__link--cart-icon::before {
+  content: "";
+  background-color: variables.$base-color-black;
+  width: 16px;
+  height: 16px;
+  margin: 0 auto;
+  display: block;
+  mask-image: url("../../icons/stack.svg#cart-icon");
+  mask-position: 50%;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}

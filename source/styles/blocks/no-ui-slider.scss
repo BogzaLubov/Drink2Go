@@ -1,0 +1,68 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.no-ui-slider {
+  .no-ui-slider__connects {
+    overflow: visible;
+  }
+
+  .no-ui-slider__connect {
+    top: -2px;
+    height: 4px;
+    background-color: variables.$alt-color-primary-lighter;
+  }
+
+  .no-ui-slider__handle {
+    top: -12px;
+    right: -12px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid variables.$alt-color-primary-lighter;
+    border-radius: 50%;
+    background-color: variables.$base-color-white;
+    box-shadow: none;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .no-ui-slider__touch-area {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    border-radius: 50%;
+    background-color: variables.$base-color-white;
+    background-clip: content-box;
+  }
+
+  .no-ui-slider__handle:focus .no-ui-slider__touch-area,
+  .no-ui-slider__handle:hover .no-ui-slider__touch-area {
+    background-color: variables.$alt-color-primary-opacity;
+  }
+
+  .no-ui-slider__handle:focus {
+    outline: none;
+  }
+
+  .no-ui-slider__handle:hover {
+    cursor: pointer;
+  }
+
+  .no-ui-slider__handle:active .no-ui-slider__touch-area {
+    background-color: variables.$base-color-primary;
+  }
+}
+
+.no-ui-slider[disabled] {
+  .no-ui-slider__connect {
+    background-color: variables.$base-color-accent;
+  }
+
+  .no-ui-slider__handle {
+    border-color: variables.$base-color-accent;
+    background-color: variables.$bg-color-1;
+    pointer-events: none;
+  }
+}

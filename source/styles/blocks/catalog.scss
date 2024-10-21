@@ -1,0 +1,176 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.catalog {
+  padding-bottom: 43px;
+  background-color: variables.$bg-color-1;
+
+  @media (max-width: variables.$mobile-width-only) {
+    padding-top: 50px;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding-top: 80px;
+    padding-bottom: 89px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding: 100px 0 119px;
+  }
+}
+
+.catalog__wrapper {
+  @media (min-width: variables.$desktop-width) {
+    grid-template-columns: 318px 1fr;
+    grid-template-areas:
+      "title       title       title"
+      "description description description"
+      "form        fiter       filter"
+      "form        cards       cards"
+      "form        pagination  pagination";
+    column-gap: 30px;
+    display: grid;
+  }
+}
+
+.catalog__title {
+  grid-area: title;
+  margin: 0;
+  margin-bottom: 5px;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 4px;
+  }
+}
+
+.catalog__description {
+  grid-area: description;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  text-align: center;
+
+  @media (min-width: variables.$tablet-width) {
+    @include mixins.set-font(42px, 64px, 700);
+    margin-bottom: 21px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    @include mixins.set-font(24px, 36px, 700);
+  }
+}
+
+.catalog__form {
+  grid-area: form;
+  margin-bottom: 29px;
+}
+
+.catalog__filters {
+  grid-area: filter;
+  display: flex;
+  align-items: center;
+
+  @media (min-width: variables.$tablet-width) {
+    justify-content: flex-end;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    justify-content: space-between;
+    padding-left: 3px;
+  }
+}
+
+.catalog__sorting-title {
+  @include mixins.set-font(16px, 24px, 600);
+
+  @media (min-width: variables.$tablet-width) {
+    margin-right: 11px;
+  }
+}
+
+.catalog__sorting-wrapper {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    width: 10px;
+    height: 10px;
+    background: url("../../icons/stack.svg#arrow-down-icon") no-repeat center;
+
+    @media (min-width: variables.$tablet-width) {
+      right: 10px;
+    }
+
+    @media (max-width: variables.$mobile-width-only) {
+      right: 19px;
+    }
+  }
+
+  &:focus-within::after {
+    background: url("../../icons/stack.svg#arrow-up-icon") no-repeat center;
+  }
+
+  &:focus-within .catalog__sorting {
+    background-color: variables.$base-color-white;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 0;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    padding: 9px;
+  }
+}
+
+.catalog__sorting {
+  @include mixins.set-font(16px, 24px, 600);
+  background-color: inherit;
+  appearance: none;
+  border: 0;
+  color: variables.$base-color-primary;
+  border-radius: 4px;
+  padding: 4px 30px 4px 10;
+  min-width: 165px;
+  min-height: 32px;
+
+  &:hover {
+    background-color: variables.$base-color-secondary;
+  }
+}
+
+.catalog__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-area: cards;
+
+  @media (min-width: variables.$tablet-width) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding-top: 13px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    grid-template-rows: repeat(6, 420px);
+    gap: 20px;
+  }
+}
+
+.catalog__navigation {
+  grid-area: pagination;
+}

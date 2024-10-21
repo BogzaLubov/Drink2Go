@@ -1,0 +1,325 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.hero {
+  position: relative;
+  //max-width: 1440px;
+  margin: 0 auto;
+}
+
+.hero__image {
+  display: block;
+
+  @media (min-width: variables.$desktop-width) {
+    margin-left: 54px;
+  }
+}
+
+.hero__image-wrapper {
+  display: block;
+  grid-area: image;
+
+  @media (min-width: variables.$tablet-width) {
+    padding-top: 20px;
+    order: 2;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-bottom: 5px;
+    padding-top: 23px;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    margin-bottom: 10px;
+  }
+}
+
+.hero__image-wrapper picture {
+  display: contents;
+}
+
+.hero__slider {
+  display: grid;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero__item {
+  visibility: hidden;
+  grid-area: 1/1/-1/-1;
+
+  @media (min-width: variables.$tablet-width) {
+    &:nth-child(1n) {
+      background-color: unset;
+      background-image: linear-gradient(0deg, transparent 188px, variables.$bg-color-2 188px);
+    }
+
+    &:nth-child(2n) {
+      background-color: unset;
+      background-image: linear-gradient(0deg, transparent 188px, variables.$bg-color-3 188px);
+    }
+
+    &:nth-child(3n) {
+      background-color: unset;
+      background-image: linear-gradient(0deg, transparent 188px, variables.$bg-color-4 188px);
+    }
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    &:nth-child(1n) {
+      background-image: none;
+      background-color: variables.$bg-color-2;
+    }
+
+    &:nth-child(2n) {
+      background-image: none;
+      background-color: variables.$bg-color-3;
+    }
+
+    &:nth-child(3n) {
+      background-image: none;
+      background-color: variables.$bg-color-4;
+    }
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    &:nth-child(1n) {
+      background-color: variables.$bg-color-2;
+    }
+
+    &:nth-child(2n) {
+      background-color: variables.$bg-color-3;
+    }
+
+    &:nth-child(3n) {
+      background-color: variables.$bg-color-4;
+    }
+  }
+}
+
+.hero__item--active {
+  visibility: visible;
+}
+
+.hero__content-wrapper {
+  grid-area: content;
+
+  @media (min-width: variables.$desktop-width) {
+    text-align: left;
+    padding-bottom: 0;
+    padding-top: 9px;
+    display: block;
+  }
+}
+
+.hero__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 60px 51px 0;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "image content";
+    gap: 30px;
+    padding-top: 7px;
+    padding-bottom: 79px;
+    max-width: 1440px;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    padding: 20px 20px 60px;
+  }
+}
+
+.hero__label {
+  margin: 0;
+
+  @media (min-width: variables.$desktop-width) {
+    text-align: left;
+  }
+}
+
+.hero__title {
+  margin: 4px 0 10px;
+  letter-spacing: 0.02em;
+
+  @media (min-width: variables.$tablet-width) {
+    @include mixins.set-font(56px, 80px, 700);
+    text-align: center;
+    padding-bottom: 6px;
+    margin-left: 1px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    @include mixins.set-font(36px, 48px, 700);
+    text-align: center;
+  }
+}
+
+.hero__description {
+  margin: 0 0 20px;
+
+  @media (min-width: variables.$tablet-width) {
+    @include mixins.set-font(20px, 32px, 400);
+    text-align: center;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    text-align: center;
+  }
+}
+
+.hero__slider-container {
+  display: grid;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+
+.hero__slider-navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.hero__page-button-icon {
+  @media (max-width: variables.$mobile-width-only) {
+    margin-left: -2px;
+  }
+}
+
+.hero__page-button--back {
+  @media (min-width: variables.$tablet-width) {
+    padding-bottom: 188px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+.hero__page-button--forward {
+  transform: rotate(180deg);
+
+  @media (min-width: variables.$tablet-width) {
+    padding-top: 193px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.hero__page-button--before .hero__page-button-icon {
+  @media (max-width: variables.$mobile-width-only) {
+    margin-top: 2px;
+  }
+}
+
+.hero__page-button--after .hero__page-button-icon {
+  @media (max-width: variables.$mobile-width-only) {
+    margin-bottom: -2px;
+  }
+}
+
+.hero__page-button {
+  background-color: transparent;
+  color: variables.$base-color-primary;
+  border: none;
+
+  @media (min-width: variables.$tablet-width) {
+    width: 80px;
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    width: 20px;
+  }
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background: linear-gradient(90deg, variables.$base-color-white 0%, variables.$bg-color-transparent 100%);
+  }
+
+  &:active:not(:disabled) {
+    background: linear-gradient(90deg, variables.$alt-color-primary-opacity 0%, rgba(variables.$alt-color-primary-opacity, 0) 100%);
+  }
+
+  &:disabled {
+    color: variables.$base-color-accent;
+  }
+}
+
+.hero__pagination {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  transform: translate(50%);
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: variables.$desktop-width) {
+    display: flex;
+    gap: 8px;
+    left: 43%;
+    transform: none;
+  }
+}
+
+.hero__pagination-button {
+  border: none;
+  background: variables.$base-color-white padding-box content-box;
+  width: 62px;
+  height: 24px;
+  padding: 10px 0;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background-color: variables.$alt-color-primary-opacity;
+  }
+
+  &:active {
+    background-color: variables.$base-color-primary;
+  }
+}
+
+.hero__pagination-button--active {
+  background-color: variables.$base-color-primary;
+}
+
+.hero__make-order {
+  @media (min-width: variables.$tablet-width) {
+    @include mixins.set-font(16px, 24px, 400);
+  }
+
+  @media (max-width: variables.$mobile-width-only) {
+    @include mixins.set-font(16px, 24px, 400);
+  }
+}
