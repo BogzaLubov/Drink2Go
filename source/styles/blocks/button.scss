@@ -17,6 +17,7 @@
 
   &:hover,
   &:focus {
+    outline: none;
     background-color: variables.$alt-color-primary-lighter;
   }
 
@@ -35,6 +36,7 @@
 
   &:hover,
   &:focus {
+    outline: none;
     background-color: variables.$alt-color-primary-lighter;
     color: variables.$base-color-white;
   }

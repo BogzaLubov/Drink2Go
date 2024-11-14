@@ -115,11 +115,11 @@
     }
   }
 
-  &:focus-within::after {
+  &:active::after {
     background: url("../../icons/stack.svg#arrow-up-icon") no-repeat center;
   }
 
-  &:focus-within .catalog__sorting {
+  &:active .catalog__sorting {
     background-color: variables.$base-color-white;
   }
 
@@ -144,7 +144,9 @@
   max-width: 170px;
   min-height: 32px;
 
-  &:hover {
+  &:hover,
+  &:focus {
+    outline: none;
     background-color: variables.$base-color-secondary;
   }
 }

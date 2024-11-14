@@ -7,5 +7,6 @@
   flex-direction: column;
   background-color: variables.$base-color-white;
   color: variables.$base-color-black;
+  min-width: 320px;
   height: 100%;
 }

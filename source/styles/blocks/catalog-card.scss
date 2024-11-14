@@ -8,6 +8,11 @@
   padding: 43px 20px 20px;
   border-radius: 4px;
 
+  &:hover,
+  &:focus {
+    box-shadow: 0 5 15px 0 rgba(variables.$base-color-black, 0.15);
+  }
+
   @media (min-width: variables.$tablet-width) {
     padding: 49px 30px 30px;
   }
@@ -32,7 +37,6 @@
 .catalog-card__title {
   align-self: flex-start;
   margin: 0;
-
 
   @media (max-width: variables.$mobile-width-only) {
     @include mixins.set-font(18px, 32px, 700);

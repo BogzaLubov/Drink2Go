@@ -61,6 +61,7 @@
 
   &:hover,
   &:focus {
+    outline: none;
     color: variables.$alt-color-primary-lighter;
   }
 

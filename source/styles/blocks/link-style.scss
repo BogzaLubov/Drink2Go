@@ -8,6 +8,7 @@
   &:hover,
   &:focus {
     color: variables.$base-color-primary;
+    outline: none;
   }
 
   &:active {

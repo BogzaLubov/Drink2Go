@@ -35,7 +35,9 @@
 .footer__logo {
   grid-area: logo;
 
-  &:hover {
+  &:hover,
+  &:focus {
+    outline: none;
     opacity: 0.8;
   }
 
@@ -114,7 +116,9 @@
   color: variables.$base-color-accent;
   padding-right: 18px;
 
-  &:hover {
+  &:hover,
+  &:focus {
+    outline: none;
     color: variables.$base-color-primary;
   }
 
@@ -132,7 +136,8 @@
     background-color: variables.$base-color-accent;
   }
 
-  &:hover::after {
+  &:hover::after,
+  &:focus::after {
     background-color: variables.$base-color-primary;
   }
 

@@ -260,6 +260,7 @@
 
   &:hover:not(:disabled),
   &:focus:not(:disabled) {
+    outline: none;
     background: linear-gradient(90deg, variables.$base-color-white 0%, variables.$bg-color-transparent 100%);
   }
 
@@ -301,6 +302,7 @@
 
   &:focus,
   &:hover {
+    outline: none;
     background-color: variables.$alt-color-primary-opacity;
   }
 

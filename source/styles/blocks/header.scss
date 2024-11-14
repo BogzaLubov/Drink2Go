@@ -24,8 +24,12 @@
   @media (max-width: variables.$mobile-width-only) {
     margin-right: auto;
   }
+}
 
-  &:hover {
+.header__logo-link {
+  &:hover,
+  &:focus {
+    outline: none;
     opacity: 0.8;
   }
 
